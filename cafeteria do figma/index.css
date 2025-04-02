@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+#menu{
+    background-color: #D86C1F;
+    color: white;
+    list-style-type: none;
+    margin:auto;
+    text-align: right;
+}
+header{
+    padding: center;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, alpha);
+}
+main{
+    
+}
+#periodo{
+    background-color: #D86C1F;
+    color: white;
+    list-style-type: none;
+    margin:30px;
+    text-align: center;
+    text-decoration: dashed;
+}
+.pratos{
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display:flexbox;
+    justify-content: center;
+    margin-left: 18%;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    float: left;
+    margin-top: -34%;
+    justify-items: center;
+}
+.bebidas{
+    align-items: right;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin-right: 18%;
+    justify-content: space-evenly;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    float: right;
+    margin-top: -34%;
+    justify-items: center;
+}
+.logosenac{
+    justify-items: left;
+}
+body{
+    font-family: Cambria;
+    background-color: #D9D9D9;
+    text-align: center;
+
+}
+.sobre{
+    margin: 15px;
+    background-color:ghostwhite;
+    color: #D86C1F;
+    display: flex;
+    flex-direction: column;
+    text-justify: center;
+    text-align: left;
+    border-radius: 10px;
+    max-width: 150px;
+    max-height: auto;
+}
+
+.paragrafo{
+    border-radius:10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px 30px;
+    margin
+    
+}
+footer{
+    color: #044B8C;
+    margin-bottom: auto;
+    font-weight:bold;
+}

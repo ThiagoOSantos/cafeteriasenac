@@ -7,19 +7,20 @@
 }
 #menu{
     background-color: #D86C1F;
+    list-style-type: none;
+    margin:auto;
+    text-align: right;
+}
+.bsugestao{
     color: white;
     list-style-type: none;
     margin:auto;
     text-align: right;
 }
-header{
-    padding: center;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, alpha);
-}
-main{
+
+/*main{
     
-}
+}*/
 #periodo{
     background-color: #D86C1F;
     color: white;
@@ -40,32 +41,49 @@ main{
     border-radius: 20px;
     float: left;
     margin-top: -34%;
-    justify-items: center;
+    justify-items:center;
+}
+.comidas{
+    padding: 30px;
+    justify-items:center;
 }
 .bebidas{
-    align-items: right;
+    
     background-color: whitesmoke;
     color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: flexbox;
     margin-right: 18%;
-    justify-content: space-evenly;
+    justify-content:center;
     width: 500px;
     height: 500px;
     border-radius: 20px;
-    float: right;
+    float:right;
     margin-top: -34%;
-    justify-items: center;
 }
-.logosenac{
-    justify-items: left;
+.drinks{
+    padding: 30px;
+    justify-items:center;
 }
+
 body{
     font-family: Cambria;
     background-color: #D9D9D9;
     text-align: center;
+}
+header{
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, alpha);
+    text-align: left;
 
 }
+#logosenac{
+    padding:20px;
+}
+#textocafeteria{
+    text-align: center;
+}
+
 .sobre{
     margin: 15px;
     background-color:ghostwhite;
@@ -83,7 +101,7 @@ body{
     border-radius:10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 40px 20px 30px;
-    margin
+    
     
 }
 footer{

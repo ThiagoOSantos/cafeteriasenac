@@ -4,20 +4,39 @@
     box-sizing: border-box;
 
 }
-.logosenac{
-    justify-self: left;
+#menu{
+    background-color: #D86C1F;
+    list-style-type: none;
+    margin:auto;
+    text-align: left;
 }
-nav{
+.bhome{
+    color: white;
+    list-style-type: none;
+    margin:auto;
+    text-align: right;
+    padding: 10px;
+}
+/*nav{
     background-color: #D86C1F;
     color: white;
     list-style-type: none;
     width: auto;
     margin-top: auto;
     text-align: left;
-}
+}*/
+
 header{
-    margin: center;
-    padding: 30px;
+    margin: 10px;
+
+}
+#logosenac{
+    justify-self: left;
+}
+#acessibilidade{
+    max-width: 50px;
+    max-height: 50px;
+    align-self: right;
 }
 body{
     font-family: Cambria;
@@ -27,17 +46,28 @@ body{
 }
 .container{
     background-color: rgb(158, 156, 156);
-    padding:30px;
+    padding:30px 15px;
     max-width: 500px;
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+form{
+    flex-direction:column;
+
 }
 #nome{
     padding: 10px;
 }
 .botao.voltar{
-    text-align: center;
+    background-color: #D86C1F;
+    color: whitesmoke;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 45%;
 }
 footer{
     align-items:end;   

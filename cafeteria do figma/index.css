@@ -16,6 +16,7 @@
     list-style-type: none;
     margin:auto;
     text-align: right;
+    padding: 10px;
 }
 
 /*main{
@@ -77,13 +78,19 @@ header{
     text-align: left;
 
 }
+
 #logosenac{
     padding:20px;
 }
+
 #textocafeteria{
     text-align: center;
 }
-
+#acessibilidade{
+    max-width: 50px;
+    max-height: 50px;
+    align-self: right;
+}
 .sobre{
     margin: 15px;
     background-color:ghostwhite;

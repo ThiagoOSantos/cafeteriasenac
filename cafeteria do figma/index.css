@@ -11,7 +11,7 @@
     margin:auto;
     text-align: right;
 }
-.bsugestao{
+#bsugestao{
     color: white;
     list-style-type: none;
     margin:auto;
@@ -89,7 +89,9 @@ header{
 #acessibilidade{
     max-width: 50px;
     max-height: 50px;
-    align-self: right;
+    float: right;
+    
+    margin-top: -10%;
 }
 .sobre{
     margin: 15px;

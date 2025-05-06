@@ -18,6 +18,22 @@
     text-align: right;
     padding: 10px;
 }
+#blogin{
+    color: white;
+    list-style-type: none;
+    margin:auto;
+    text-align: right;
+    padding: 10px;
+}
+
+#bcadastro{
+    color: white;
+    list-style-type: none;
+    margin:auto;
+    text-align: right;
+    padding: 10px;
+}
+
 
 /*main{
     

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}">
+    <title>Cafeteria Home</title>
+</head>
+<nav id="menu">
+    <a href="{{url_for('sugestao')}}" id="bsugestao" >Sugestão</a>
+    <a href="{{url_for('logincafe')}}" id="blogin" >Login</a>
+    <a href="{{url_for('cadastro')}}" id="bcadastro">Cadastre-se</a>
+</nav>
+<body>  
+    <header>
+        <img src="imgs/logosenac.png" alt="logosenac" id="logosenac">
+        <h2 id="textocafeteria">Cafeteria Senac</h2>
+        <img src="imgs/acessibilidade-universal-removebg-preview.png" alt="logoacessibilidade" id="acessibilidade">
+    </header>
+    <nav id="periodo">Período</nav>
+    
+    <main>
+     <!--uma sessão Sobre com o texto do Senac/Cafeteria--> 
+     <section class="sobre">
+            <div class="paragrafo">
+                <p>Bem vindos(as) a cafeteria do Senac Alagoas - polo Agreste.
+                    Criada em 2025 com o objetivo de fornecer cardápios, informações e participação mútua entre a instituição e alunos. A cafeteria surge como um projeto da turma de Desenvolvedores Web e da necessidade de um ambiente adequado para refeições. Aqui você pode acompanhar diariamente o cardápio de nossa cafeteria</p>
+            </div>
+        </section>
+        <div class="pratos"><h3>Pratos</h3>
+            <section class="comidas">
+                <h4>Segunda</h4>
+                <p>Cuscuz com charque, cachorro quente, pão na chapa</p>
+                <h4>Terça</h4>
+                <p>Cuscuz com charque, cachorro quente, pão na chapa</p>
+                <h4>Quarta</h4>
+                <p>Cuscuz com charque, cachorro quente, pão na chapa</p>
+                <h4>Quinta</h4>
+                <p>Cuscuz com charque, cachorro quente, pão na chapa</p>
+                <h4>Sexta</h4>
+                <p>Cuscuz com charque, cachorro quente, pão na chapa</p>
+                <h4>Sábado</h4>
+                <p>Cuscuz com charque, cachorro quente, pão na chapa</p>
+            </section>
+        </div>
+<!--class serve para alterar mais de 1 elemento no conjunto, e o id é para alteração de um elemento em específico-->
+        <div class="bebidas"><h3>Bebidas</h3>
+            <section class="drinks">
+                <h4>Segunda</h4>
+                <p>Suco de goiaba, café e nescau</p>
+                <h4>Terça</h4>
+                <p>Suco de goiaba, café e nescau</p>
+                <h4>Quarta</h4>
+                <p>Suco de goiaba, café e nescau</p>
+                <h4>Quinta</h4>
+                <p>Suco de goiaba, café e nescau</p>
+                <h4>Sexta</h4>
+                <p>Suco de goiaba, café e nescau</p>
+                <h4>Sábado</h4>
+                <p>Suco de goiaba, café e nescau</p>
+            </section>
+        </div>
+            
+    </main>
+
+
+</body>
+<footer>
+    <p>Senac - Polo Agreste @2025</p>
+</footer>
+</html>

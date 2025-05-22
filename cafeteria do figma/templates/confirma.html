@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'confirma.css')}}">
+    <title>Sugestão Enviada</title>
+</head>
+<nav>
+    <a href="{{ url_for('indexcafeteria') }}" id="bhome" >Home</a>
+</nav>
+<header>
+    <img src="imgs/logosenac.png" alt="logosenac" id="logosenac">
+    <img src="imgs/acessibilidade-universal-removebg-preview.png" alt="logoacessibilidade" id="acessibilidade">
+</header>
+<body>
+    <main>
+        <div class="enviada">
+            <p>Sua sugestão foi enviada!</p>
+            <a href="{{ url_for ('sugestao') }}" id="botaovoltar">Voltar</a>
+        </div>
+        
+    </main>
+   
+</body>
+<footer>
+    <p>Senac - Polo Agreste @2025</p>
+</footer>
+</html>

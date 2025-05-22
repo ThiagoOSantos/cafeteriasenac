@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'logincafe.css')}}">
+    <title>Página de Login</title>
+</head>
+<nav id="menu">
+    <a href="{{url_for('indexcafeteria')}}" id="bhome" >Home</a>  
+</nav>
+<body>
+    <header>
+        <img src="imgs/logosenac.png" alt="logosenac" id="logosenac">
+        <img src="imgs/acessibilidade-universal-removebg-preview.png" alt="logoacessibilidade" id="acessibilidade">
+    </header>
+    <main class="container">
+        <form method="POST">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            <label for="senha">Senha:</label>
+            <input type="text" id="senha" name="senha" required>
+            <button type="submit" id="botao">Enviar</button>
+            <a href="{{url_for('cadastro')}}" id="bcadastro">Cadastre-se</a>
+            <a href="{{url_for('indexcafeteria')}}" id="botao-voltar">Voltar</a>
+        </form>
+        <!--<label for="text" id="paragrafo">Não possui login? Cadastre-se!</label>-->
+    </main>
+    <p id="alerta_cadastro">Não possui login? Cadastre-se!</p>
+</body>
+<footer>
+    <p>Senac - Polo Agreste @2025</p>
+</footer>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'cadastromenu.css') }}">
+    <title>Aba de Sugestão</title>
+</head>
+<nav id="menu">
+        <a href="{{ url_for('indexcafeteria')}}" class="bhome" >Home</a>  
+</nav>
+<body>
+    <header>
+        <img src="imgs/logosenac.png" alt="logosenac" id="logosenac">
+        <img src="imgs/acessibilidade-universal-removebg-preview.png" alt="logoacessibilidade" id="acessibilidade">
+    </header>
+    <main class="container">
+        <form method="POST">
+            {{if opcao == pratos}}
+                <label for="nome">título:</label>
+                <input type="text" id="titulo" name="nome" required>
+                <label for="conteudo">conteudo:</label>
+                <input type="text" id="conteudo" required>
+                <label for = "preco">preço:</label>
+                <input type="number" id = "preco" required>
+                <button type="submit" class="botao">Enviar</button>
+            {{elif opcao == bebidas}}
+            
+        </form>
+    </main>
+    <a href="{{url_for('indexcafeteria')}}" class="botao-voltar">Voltar</a>
+</body>
+<footer>
+    <p>Senac - Polo Agreste @2025</p>
+</footer>
+</html>

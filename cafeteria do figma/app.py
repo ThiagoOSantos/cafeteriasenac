@@ -56,7 +56,8 @@ def inicializar_banco():
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    titulo TEXT NOT NULL,
                    descricao TEXT NOT NULL,
-                   preco INTEGER NOT NULL
+                   preco INTEGER NOT NULL,
+                   autor_id INTEGER NOT NULL
             );
         ''')
         db.execute('''
@@ -85,20 +86,20 @@ def inicializar_banco():
 @app.route('/')
 def index():
     # Exibir todos os posts públicos na página inicial
-    db = get_db()
-    pratos = db.execute('''
-        SELECT titulo, descricao, preco FROM pratos
+#     db = get_db()
+#     pratos = db.execute('''
+#         SELECT titulo, descricao, preco FROM pratos
         
-''').fetchall()
-    bebidas = db.execute('''
-        SELECT titulo, descricao, preco FROM bebidas    
-''').fetchall()
-    return render_template('indexcafeteria.html', pratos = pratos, bebidas = bebidas)
-   
+# ''').fetchall()
+#     bebidas = db.execute('''
+#         SELECT titulo, descricao, preco FROM bebidas    
+# ''').fetchall()
+#     return render_template('indexcafeteria.html', pratos = pratos, bebidas = bebidas)
+   return render_template('indexcafeteria.html')
 #--------------------- Rota Registro de Usuario ----------------------------------------       
 
-@app.route('/cadastro', methods=['GET', 'POST'])
-def register():
+@app.route('/cadastro_usuario', methods=['GET', 'POST'])
+def cadastro_usuario():
     #Exibir o formulario de cadastro e processar os dados enviados.
     if request.method == 'POST':
         nome = request.form['nome']
@@ -111,10 +112,10 @@ def register():
         try:
             db.execute('INSERT INTO usuarios (nome, email, senha) VALUES (?,?,?)', (nome, email, senha))
             db.commit()
-            return redirect(url_for('login'))
+            return redirect(url_for('logincafe'))
         except sqlite3.IntegrityError:
-            return "Error: CPF ou Email já cadastrados."
-    return render_template('cadastro.html')
+            return "Error: Usuario ou Email já cadastrados."
+    return render_template('cadastro_usuario.html')
 
 #--------------------- Rota Registro de Menu ----------------------------------------   
 
@@ -123,7 +124,7 @@ def criarpratos():
     #Exibir o formulario de cadastro e processar os dados enviados.
     if request.method == 'POST':
         titulo = request.form['titulo']
-        descricao = request.form['conteudo']
+        descricao = request.form['descricao']
         preco = request.form['preco']
 
         db = get_db()
@@ -153,7 +154,7 @@ def criarpratos():
 #--------------------- Rota de Login ----------------------------------------       
 
 @app.route('/logincafe', methods=('GET', 'POST'))
-def login():
+def logincafe():
     #Exibir e processar o formulario de login
     if request.method == 'POST':
         email = request.form['email']
@@ -166,21 +167,47 @@ def login():
             return redirect(url_for('indexcafeteria'))
         else:
             return "Login inválido"
+    
     return render_template('logincafe.html')
 
 #--------------------- Painel do Usuario ----------------------------------------       
 
-@app.route('/index')
-#Exibir os posts do usuario logado.
-def dashboard():
-    if 'usuario.id' not in session:
+# @app.route('/indexcafeteria')
+# #Exibir os posts do usuario logado.
+# def indexcafeteria():
+#     # if 'usuario.id' not in session:
+#     #     return redirect(url_for('logincafe'))
+    
+#     db = get_db()
+#     posts = db.execute('SELECT * FROM pratos WHERE autor_id=?', (session['usuario_id'])).fetchall() #Vai buscar dentro do banco de dados os posts do usuario q estiver logado
+#     return render_template('indexcafeteria.html', posts=posts)
+
+#--------------------- Rota para Criar Sugestao ---------------------------------------- 
+
+@app.route('/sugestao')
+def sugestao():
+    #Permitir que o usuario logado crie uma sugestao de cardapio
+    if 'usuario_id' not in session:
         return redirect(url_for('logincafe'))
     
-    db = get_db()
-    posts = db.execute('SELECT * FROM pratos WHERE autor_id=?', (session['usuario_id'])).fetchall() #Vai buscar dentro do banco de dados os posts do usuario q estiver logado
-    return render_template('dashboard.html', posts=posts)
+    if request.method == 'POST':
+        titulo = request.form['titulo']
+        conteudo = request.form['conteudo']
+        
+        db = get_db()
+        db.execute('INSERT INTO sugestoes (titulo, conteudo, autor_id) VALUES(?,?,?)', (titulo, conteudo, session['usuario_id']))
+        db.commit()
+    return redirect(url_for('confirma.html'))
+#--------------------- Rota para Confirmação ----------------------------------------       
 
-#--------------------- Rota para Criar Novo Post ----------------------------------------       
+@app.route('/confirma')
+def confirma():
+    #Permitir que o usuario logado crie uma sugestao de cardapio
+    if 'usuario_id' not in session:
+        return redirect(url_for('logincafe'))
+    
+    print("Parabéns!")
+    return redirect(url_for('confirma.html'))
 
 '''@app.route('/cadastromenu', methods=['GET', 'POST'])
 def new_post():

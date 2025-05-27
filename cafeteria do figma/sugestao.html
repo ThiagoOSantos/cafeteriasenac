@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sugestao.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'sugestao.css') }}">
     <title>Aba de Sugestão</title>
 </head>
 <nav id="menu">
-    <a href="indexcafeteria.html" id="bhome" >Home</a>  
+    <a href="{{url_for ('indexcafeteria') }}" id="bhome" >Home</a>  
 </nav>
 <body>
     <header>
-        <img src="logosenac.png" alt="logosenac" id="logosenac">
-        <img src="acessibilidade-universal-removebg-preview.png" alt="logoacessibilidade" id="acessibilidade">
+        <img src="imgs/logosenac.png" alt="logosenac" id="logosenac">
+        <img src="imgs/acessibilidade-universal-removebg-preview.png" alt="logoacessibilidade" id="acessibilidade">
     </header>
     <main class="container">
-        <form>
+        <form method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" required>
             <textarea name="mensagem" id="mensagem">Escreva sua sugestão</textarea>
             <button type="submit" id="botao">Enviar</button>
-            <a href="indexcafeteria.html" id="botao-voltar">Voltar</a>
+            <a href="{{url_for ('indexcafeteria')}}" id="botao-voltar">Voltar</a>
         </form>
     </main>
 </body>
